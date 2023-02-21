@@ -28,5 +28,12 @@ namespace dotnet.Controllers
 				{
 					return Ok(characters.FirstOrDefault(c => c.Id == id));
 				}
+
+				[HttpPost]
+				public ActionResult<List<Character>> AddCharacter(Character newCharacter) 
+				{
+					characters.Add(newCharacter);
+					return Ok(characters);
+				}
 	}
 }
